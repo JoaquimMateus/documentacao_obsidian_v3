@@ -1,0 +1,2 @@
+# documentacao_obsidian_v3
+atendimentoV3
