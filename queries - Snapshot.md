@@ -1,0 +1,20 @@
+QUERIES_TEXT:
+
+  - "REPLACE INTO SnapshotGVR2 select CURDATE() as EXTRACAO_DT, year(ABERTURA_HORA) AS ABERTURA_ANO,
+
+    IF (SUBSTR(ID,1,3)='PTI','S','N') AS PTI, INQUILINO, GRUPO, STATUS, FONTE, count(ID) as TIQUET_QTD
+
+    FROM Ticket group by ABERTURA_ANO, PTI, INQUILINO, GRUPO, STATUS, FONTE;"
+
+  - "REPLACE INTO SnapshotESC select CURDATE() as EXTRACAO_DT, year(ABERTURA_HORA) AS ABERTURA_ANO,
+
+    IF (SUBSTR(ID,1,2)='TI','S','N') AS PTI, STATUS, GRUPO, TECNICO_NOME, count(ID) as TIQUET_QTD
+
+    from Escalonamento group by EXTRACAO_DT, ABERTURA_ANO, PTI, STATUS, GRUPO, TECNICO_NOME;"
+
+-------------------------------------------------------------------------------
+ # - "REPLACE INTO SnapshotINC select CURDATE() as EXTRACAO_DT, year(ABERTO_EM) AS ABERTURA_ANO,
+
+  #   STATUS, GRUPO_ATRIBUICAO as GRUPO, RESOLVIDO_POR as TECNICO_NOME, count(ID_TICKET_PAI) as TIQUET_QTD
+
+  #   from Incidente group by EXTRACAO_DT, ABERTURA_ANO, STATUS, GRUPO, TECNICO_NOME;"

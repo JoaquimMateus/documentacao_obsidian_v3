@@ -1,0 +1,2 @@
+Depois que o resultado sair precisamos que os dados estejam condizentes com as saídas de negocio esperadas (Checar com a Samaris), posteriormente checar com o Regis (DETE). Checagem precisará ser feita no PowerBI e Painel (Casseb).
+[[Atualização dos Scripts auxiliares (Aux_)]]
